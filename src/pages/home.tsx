@@ -3,18 +3,16 @@ import { Box, Typography, Button } from '@mui/material';
 import { ColorModeContext } from '../contexts/colormodecontext';
 
 import GalleryWithThumbnails from '../components/molecules/gallery';
-import { Product } from '../types/productTypes';
-import ProductBox from '../components/molecules/boxdes';
-import ProductCard from '../components/molecules/carddes';
+import ModelCard from '../components/molecules/modelcard';
 
-const product: Product = {
-  number: '12345',
-  name: 'Product Name',
-  series: 'Series 1',
-  originalPrice: 99.99,
-  releaseDate: '2023-07-22',
-  description: 'This is a detailed description of the product. It explains the features, benefits, and any other relevant information that potential customers might find useful.',
-};
+// const product: Product = {
+//   number: '12345',
+//   name: 'Product Name',
+//   series: 'Series 1',
+//   originalPrice: 99.99,
+//   releaseDate: '2023-07-22',
+//   description: 'This is a detailed description of the product. It explains the features, benefits, and any other relevant information that potential customers might find useful.',
+// };
 
 const Home: React.FC = () => {
   const { mode, toggleColorMode } = useContext(ColorModeContext);
@@ -30,16 +28,13 @@ const Home: React.FC = () => {
       <Button variant="contained" onClick={toggleColorMode}>
         Toggle Theme
       </Button>
-      <Box>
-        <GalleryWithThumbnails />
-      </Box>
-      Product Card
-      <Box>
-        <ProductCard product={product} />
-      </Box>
-      Product Box
-      <Box>
-        <ProductBox product={product} />
+      <Box sx={{ display: 'flex' }}>
+
+          <GalleryWithThumbnails />
+
+
+          {/* <ModelCard product={product} /> */}
+ 
       </Box>
     </Box>
   );
